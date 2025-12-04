@@ -1,0 +1,9 @@
+.servicios{padding:3rem 0}
+.servicios-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.servicio{padding:1rem}
+.icon-placeholder{width:56px;height:56px;border-radius:12px;background:linear-gradient(180deg,var(--primary-1),var(--primary-2));display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:.8rem}
+.muted{color:var(--muted);font-size:.95rem}
+
+
+@media (max-width:1000px){.servicios-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:620px){.servicios-grid{grid-template-columns:1fr}}
