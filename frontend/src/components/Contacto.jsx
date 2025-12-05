@@ -30,7 +30,7 @@ const Contacto = () => {
     setStatus({ loading: true, success: null, error: null });
 
     try {
-      const res = await fetch(`${API_URL}/contact`, { //29/11/2025
+      const res = await fetch(`${API_URL}/api/contact`, { //29/11/2025
         method: "POST",
         headers: { 
           "Content-Type": "application/json" 
