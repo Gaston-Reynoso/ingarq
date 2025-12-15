@@ -68,7 +68,28 @@
   
   transform: translateY(-2px);
 }
+/*Validaciones*/
+/* Para ocultar el campo honeypot de los usuarios humanos */
+.honeypot-field {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    opacity: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    z-index: -1;
+}
 
+/* Estilos de mensaje de error (Asegúrate de que existan) */
+.error-msg {
+    color: #cc0000;
+    margin-top: 5px;
+    padding: 5px 10px;
+    border-left: 3px solid #cc0000;
+    font-size: 0.9em;
+    background-color: #ffe0e0;
+}
 
 
 .success-msg {
@@ -77,8 +98,4 @@
   font-weight: bold;
 }
 
-.error-msg {
-  margin-top: 10px;
-  color: #ff3b3b;
-  font-weight: bold;
-}
+

@@ -4,9 +4,9 @@ import { sendEmail } from "../utils/sendEmail";
 import { z } from "zod";
 
 const ContactSchemaValidator = z.object({
-  name: z.string().min(2),
-  email: z.string().email(),
-  message: z.string().min(5)
+  email: z.email({ pattern: z.regexes.email }),
+  name: z.string().min(2).max(100),
+  message: z.string().min(10).max(300)
 });
 
 export const handleContact = async (req: Request, res: Response) => {
@@ -31,7 +31,7 @@ export const handleContact = async (req: Request, res: Response) => {
     <hr style="margin:30px 0;" />
 
     <p style="font-size:14px; color:#777;">
-      📍 IngArq Construcciones<br/>
+      📍 Córdoba, Argentina<br/>
       ✉️ contacto@ingarq.com.ar<br/>
       🌐 www.ingarq.com.ar
     </p>
