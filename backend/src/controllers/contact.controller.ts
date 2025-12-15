@@ -16,7 +16,19 @@ export const handleContact = async (req: Request, res: Response) => {
     // Guardar en Mongo
     const saved = await Contact.create(parsed);
 
-    // Email al admin
+
+
+    // Email de confirmación al cliente
+    await sendEmail(
+      parsed.email,
+      "Hemos recibido tu mensaje — IngArq",
+      `
+      <h3>Hola ${parsed.name}, ¡gracias por contactarte!</h3>
+      <p>En breve un profesional de IngArq te responderá.</p>
+      `
+    );
+
+        // Email al admin
     await sendEmail(
       process.env.ADMIN_EMAIL!,
       "Nuevo contacto desde IngArq",
@@ -27,16 +39,6 @@ export const handleContact = async (req: Request, res: Response) => {
       <p><strong>Mensaje:</strong> ${parsed.message}</p>
       <hr />
       <p>Fecha: ${new Date().toLocaleString()}</p>
-      `
-    );
-
-    // Email de confirmación al cliente
-    await sendEmail(
-      parsed.email,
-      "Hemos recibido tu mensaje — IngArq",
-      `
-      <h3>Hola ${parsed.name}, ¡gracias por contactarte!</h3>
-      <p>En breve un profesional de IngArq te responderá.</p>
       `
     );
 
