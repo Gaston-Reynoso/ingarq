@@ -1,7 +1,25 @@
 .servicios{padding:3rem 0}
 .servicios-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
-.servicio{padding:1rem}
-.icon-placeholder{width:56px;height:56px;border-radius:12px;background:linear-gradient(180deg,var(--primary-1),var(--primary-2));display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:.8rem}
+.servicio{
+    background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.02)
+  );
+  border: 1px solid rgba(255,255,255,0.05);
+    padding:1rem}
+.icon-placeholder{
+    width:56px;
+    height:56px;
+    border-radius:12px;
+    background: linear-gradient(180deg,var(--primary-1),var(--primary-2));
+    color:#111;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:800;
+    margin-bottom:.8rem
+}
 .muted{color:var(--muted);font-size:.95rem}
 
 

@@ -1,25 +1,49 @@
-.nav{
-    position:sticky;
-    top:0;
-    z-index:50;
-    padding:0.6rem 0;
-    backdrop-filter: blur(6px)
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    padding: .75rem 0;
+    backdrop-filter: blur(10px);
+    background: rgba(10,15,20,0.55);
+    transition: background .3s ease, box-shadow .3s ease;
 }
 .nav-inner{
     display:flex;
     align-items:center;
     justify-content:space-between
 }
-.logo{
-    font-weight:800;
-    font-size:1.2rem
+
+
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  font-weight:800;
+  font-size:1.2rem;
 }
-.logo span{
-    background:linear-gradient(90deg,var(--primary-1),var(--primary-2));
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent
+
+.brand button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
+
+.brand-icon {
+    height: 58px;
+    width: auto;
+    object-fit: contain;
+    transition: transform .25s ease;
+}
+
+.brand button:hover .brand-icon {
+    transform: scale(1.04);
+}
+
+
+
+
 
 
 .nav-links{
@@ -27,20 +51,292 @@
     gap:1rem;
     align-items:center
 }
-.nav-links a{padding:.4rem .6rem;border-radius:8px;text-decoration:none;color:var(--muted);font-weight:600}
-.nav-links a:hover{color:inherit;background:var(--glass)}
-.nav-links .cta{background:linear-gradient(90deg,var(--primary-1),var(--primary-2));color:white}
-
-
-.nav-toggle{display:none;background:none;border:0}
-.nav-toggle span{display:block;width:22px;height:2px;background:var(--muted);margin:4px;border-radius:3px}
-
-
-.nav--scrolled{box-shadow:0 6px 18px rgba(2,6,23,0.6);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01))}
-
-
-@media (max-width:900px){
-.nav-links{position:fixed;inset:auto 0 0 0;height:60vh;background:linear-gradient(180deg, rgba(2,6,23,0.98), rgba(2,6,23,0.96));flex-direction:column;padding:2rem;transform:translateY(100%);transition:transform .28s ease;border-top-left-radius:14px;border-top-right-radius:14px}
-.nav-links.open{transform:translateY(0)}
-.nav-toggle{display:block}
+.nav-links a,
+.nav-links button {
+    padding: .45rem .8rem;
+    border-radius: 10px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: all .25s ease;
+    font-family: inherit;
 }
+
+
+
+.nav-links a:hover,
+.nav-links button:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.06);
+}
+
+.nav-links .cta {
+    background: linear-gradient(
+        135deg,
+        var(--primary-1),
+        var(--primary-2)
+    );
+    color: #0b0f14;
+    font-weight: 700;
+    padding: .5rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+
+.nav-links .cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.45);
+}
+
+
+
+
+.nav-toggle{
+    display:none;
+    background:none;
+    border:0}
+.nav-toggle span{
+    display:block;
+    width:22px;
+    height:2px;
+    background: linear-gradient(90deg,var(--primary-1),var(--primary-2));
+    margin:4px;
+    border-radius:3px;
+    transform: none;
+    transition: all 0.3s ease;
+}
+
+
+
+
+
+
+/* 2. ESTADO ABIERTO (Menú Abierto - La Cruz) */
+
+/* Barra Superior: Se mueve y gira +45 grados */
+.nav-toggle .top-close {
+    transform: translateY(6px) rotate(45deg); 
+}
+/* Barra del Medio: Se oculta */
+.nav-toggle .middle-close {
+    opacity: 0;
+}
+/* Barra Inferior: Se mueve y gira -45 grados */
+.nav-toggle .bottom-close {
+    transform: translateY(-6px) rotate(-45deg); 
+}
+
+.nav-toggle .top-open,
+.nav-toggle .middle-open,
+.nav-toggle .bottom-open {
+    transform: none; /* Sin rotación ni traslación */
+    opacity: 1; /* Completamente visible */
+}
+
+
+.nav--scrolled {
+    background: linear-gradient(
+        180deg,
+        rgba(10,15,20,0.95),
+        rgba(10,15,20,0.9)
+    );
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+
+/* --- ESTILOS DEL DESPLEGABLE --- */
+/* Contenedor principal para posicionar el menú */
+.dropdown-wrapper {
+    position: relative; /* Clave para el posicionamiento del menú */
+}
+
+/* Estilo para el enlace principal del desplegable (toggle) */
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .4rem .6rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.dropdown-toggle:hover {
+    color: inherit;
+    background: var(--glass);
+}
+
+/* Estilo de la flecha/icono de indicador */
+.dropdown-arrow {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+    margin-left: 5px;
+    transition: transform 0.2s ease;
+}
+
+.dropdown-toggle.active .dropdown-arrow {
+    transform: rotate(180deg); /* Rota la flecha cuando está abierto */
+}
+
+/* El menú desplegable en sí */
+.dropdown-menu {
+    background: linear-gradient(
+        180deg,
+        rgba(15,23,42,0.98),
+        rgba(15,23,42,0.94)
+    );
+    border-radius: 14px;
+    padding: .6rem;
+    min-width: 180px;
+}
+
+.dropdown-menu a,
+.dropdown-menu button {
+    padding: .5rem .9rem;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all .2s ease;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu button:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+
+.dropdown-menu.open {
+    display: flex; /* Muestra cuando la clase 'open' está presente */
+}
+
+
+
+
+/* --- VISTA MÓVIL (<= 900px) --- */
+@media (max-width:900px){
+.nav-links{
+    position:fixed;
+    inset:auto 0 0 0;
+    height:60vh;background:linear-gradient(180deg, rgba(2,6,23,0.98), rgba(2,6,23,0.96));
+    flex-direction:column;
+    align-items: center;
+    width: 100%;
+    padding:2rem;transform:translateY(100%);
+    transition:transform .28s ease;
+    border-top-left-radius:14px;
+    border-top-right-radius:14px;
+    gap: 1.2rem;
+    }
+
+      .nav-links button,
+    .nav-links a {
+        font-size: 1.05rem;
+    }
+
+    .nav-links a:not(.dropdown-toggle) {
+        width: 100%;
+        text-align: center; /* Centra el texto dentro del enlace */
+    }
+
+    .nav-links.open{
+        transform:translateY(0)
+    }
+  
+    /* 1. Asegurar que el contenedor interno no colapse */
+    .nav-inner {
+        position: relative; /* Asegura un contexto para z-index */
+        /* Puede ser útil añadir una altura mínima si el padding es muy bajo */
+    }
+    
+    /* 2. Forzar la visibilidad y posición del botón toggle */
+    .nav-toggle {
+        display: block; /* Debe ser visible */
+        position: relative; /* Clave si el logo es absoluto */
+        z-index: 100; /* Siempre encima de todo lo demás en la cabecera */
+        
+    }
+    
+    /* 3. Asegurar que el logo no cubra el botón */
+    .brand {
+        z-index: 90; /* Un z-index menor que el botón */
+    }
+
+    
+    .dropdown-wrapper {
+        width: 100%; /* Asegura que el contenedor tome todo el ancho del menú móvil */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .dropdown-toggle {
+        width: 100%; /* El toggle debe ocupar todo el ancho */
+        justify-content: center;
+    }
+    
+    /* El menú desplegable móvil se muestra en línea */
+    .dropdown-menu {
+        position: static; /* Quita el posicionamiento absoluto */
+        width: 100%;
+        padding: 0.5rem 1rem 0.5rem 2rem; /* Añade indentación */
+        background: rgba(0, 0, 0, 0.2); 
+        border: none;
+        box-shadow: none;
+        opacity: 1;
+        transform: none;
+        pointer-events: all;
+        margin-top: .5rem;
+        border-radius: 12px;
+    }
+  
+    
+    .dropdown-menu a {
+        padding: 0.5rem 0.8rem;
+        width: 100%;
+        text-align: center;
+        
+      
+    }
+    
+    /* Oculta los enlaces cuando el desplegable está cerrado */
+    .dropdown-menu:not(.open) {
+        display: none;
+    }
+}
+
+
+/* --- VISTA DE ESCRITORIO (>= 901px) --- */
+@media (min-width: 901px) {
+    /* Posicionamiento y Estilizado del Menú Desplegable en Escritorio */
+    .dropdown-menu {
+        position: absolute;
+        top: 100%; /* Colócalo justo debajo del toggle */
+        left: 0;
+        background: var(--nav-bg, #1e293b); /* Define un fondo para que se superponga */
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        opacity: 0;
+        transform: translateY(10px);
+        pointer-events: none; /* Ignora clics cuando está oculto */
+        transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+    
+    .dropdown-menu.open {
+        display: flex; /* Importante para el layout */
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: all; /* Habilita clics cuando está visible */
+    }
+    
+    /* Si la navbar se vuelve de color, ajusta las variables de color */
+    .nav--scrolled .dropdown-menu {
+        /* Puedes ajustar el fondo si la navbar scrolleada tiene un color diferente */
+        background: linear-gradient(180deg, rgba(2,6,23,0.98), rgba(2,6,23,0.96));
+    }
+}
+
+

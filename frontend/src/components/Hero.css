@@ -33,7 +33,7 @@
 .hero-title{
     font-size:3rem;
     line-height:1.02;
-    background:linear-gradient(90deg,var(--primary-1),var(--primary-2));
+    background: linear-gradient(90deg,var(--primary-1),var(--primary-2));
     -webkit-background-clip:text;
     background-clip:text;
     color:transparent;
@@ -41,7 +41,7 @@
     justify-content: center;
 }
 .hero-sub{
-    color:var(--muted);
+    color: var(--text-muted);
     margin-top:1rem;
     margin-bottom:1.2rem;
     align-items: center;

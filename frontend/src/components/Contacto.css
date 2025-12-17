@@ -31,6 +31,8 @@
   border: none;
   outline: none;
   font-size: 1rem;
+  background: #f5f5f5;
+  color: #111;
 }
 
 .contact-form textarea {
@@ -83,10 +85,11 @@
 
 /* Estilos de mensaje de error (Asegúrate de que existan) */
 .error-msg {
-    color: #cc0000;
+    color: var(--error);
+    background-color: #ffe0e0;
+    border-left: 3px solid var(--error);
     margin-top: 5px;
     padding: 5px 10px;
-    border-left: 3px solid #cc0000;
     font-size: 0.9em;
     background-color: #ffe0e0;
 }
@@ -96,6 +99,7 @@
   margin-top: 10px;
   color: #00ffbf;
   font-weight: bold;
+  color: var(--success);
 }
 
 

@@ -7,6 +7,8 @@ const MIN_LENGTH = 10;
 const MAX_LENGTH = 500;
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expresión regular simple
 
+
+
 const Contacto = () => {
   const [form, setForm] = useState({
     name: "",

@@ -12,15 +12,31 @@ import Footer from './components/Footer';
 const IngArq = () => {
 return (
 <div className="ingarq-root">
-<Navbar />
-<main>
-<Hero />
-<Servicios />
-<Sobre />
-<Proyectos />
-<Contacto />
-</main>
-<Footer />
+  	 <Navbar />
+
+      <main>
+        <section id="hero">
+          <Hero />
+        </section>
+
+        <section id="servicios">
+          <Servicios />
+        </section>
+
+        <section id="sobre">
+          <Sobre />
+        </section>
+
+        <section id="proyectos">
+          <Proyectos />
+        </section>
+
+        <section id="contacto">
+          <Contacto />
+        </section>
+      </main>
+
+      <Footer />
 
 {/*<div class="whatsapp-fab" role="button" tabindex="0" aria-label="¿Tienes alguna pregunta? Contactar por WhatsApp">
 									<div class="joinchat__tooltip" aria-hidden="true"><div>¿Tienes alguna pregunta?</div></div> rel="noopener noreferrer"
