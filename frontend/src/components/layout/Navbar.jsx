@@ -100,14 +100,18 @@ const Navbar = () => {
             Inicio
           </NavLink>
 
-          <DropdownItem
+          {/*<DropdownItem
             title="Servicios"
             links={[
               { label: "Construcción", to: "/servicios" },
               { label: "Diseño", to: "/servicios" },
               { label: "Consultoría", to: "/servicios" },
             ]}
-          />
+          />*/}
+
+           <NavLink to="/servicios" onClick={() => setOpenMenu(false)}>
+            Servicios
+          </NavLink>
 
           <NavLink to="/sobre" onClick={() => setOpenMenu(false)}>
             Sobre
