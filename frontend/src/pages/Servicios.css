@@ -1,0 +1,170 @@
+/* SECCION */
+
+.servicios{
+  padding:3rem 0;
+}
+
+
+/* GRID */
+
+.servicios-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.2rem;
+}
+
+
+/* CARD */
+
+.servicio{
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.02)
+  );
+
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:12px;
+
+  padding:1.4rem;
+
+  display:flex;
+  flex-direction:column;
+
+  transition:all .25s ease;
+}
+
+
+/* HOVER */
+
+.servicio:hover{
+  transform:translateY(-6px);
+  border-color:rgba(255,255,255,0.12);
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+
+/* ICONO */
+
+.icon-placeholder{
+  width:56px;
+  height:56px;
+
+  border-radius:12px;
+
+  background:linear-gradient(
+    180deg,
+    var(--primary-1),
+    var(--primary-2)
+  );
+
+  color:#111;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-weight:800;
+  font-size:0.9rem;
+
+  margin-bottom:1rem;
+}
+
+
+/* TITULO */
+
+.servicio h3{
+  margin-bottom:.6rem;
+  font-size:1.1rem;
+}
+
+
+/* LISTA */
+
+.servicio-lista{
+  margin:.6rem 0 1.2rem;
+  padding-left:1rem;
+
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+.servicio-lista li{
+  margin-bottom:.35rem;
+}
+
+
+/* BOTON */
+
+.btn-servicio{
+  margin-top:auto;
+
+  display:inline-block;
+
+  padding:.5rem .9rem;
+
+  border-radius:8px;
+
+  font-size:.85rem;
+  font-weight:600;
+
+  background:linear-gradient(
+    180deg,
+    var(--primary-1),
+    var(--primary-2)
+  );
+
+  color:#111;
+  text-decoration:none;
+
+  transition:all .2s ease;
+}
+
+
+/* HOVER BOTON */
+
+.btn-servicio:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 16px rgba(0,0,0,.35);
+}
+
+
+/* TEXTO MUTED */
+
+.muted{
+  color:var(--muted);
+  font-size:.95rem;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width:1200px){
+
+  .servicios-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+}
+
+@media (max-width:900px){
+
+  .servicios-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media (max-width:600px){
+
+  .servicios-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+.icon-placeholder svg{
+  width:24px;
+  height:24px;
+  stroke:#111;
+}

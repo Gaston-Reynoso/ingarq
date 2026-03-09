@@ -1,48 +1,9 @@
-import React from 'react';
-import './IngArq.css';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Servicios from './components/Servicios';
-import Sobre from './components/Sobre';
-import Proyectos from './components/Proyectos';
-import Contacto from './components/Contacto';
-import Footer from './components/Footer';
+import React from 'react'
 
-
-const IngArq = () => {
-return (
-<div className="ingarq-root">
-  	 <Navbar />
-
-      <main>
-        <section id="hero">
-          <Hero />
-        </section>
-
-        <section id="servicios">
-          <Servicios />
-        </section>
-
-        <section id="sobre">
-          <Sobre />
-        </section>
-
-        <section id="proyectos">
-          <Proyectos />
-        </section>
-
-        <section id="contacto">
-          <Contacto />
-        </section>
-      </main>
-
-      <Footer />
-
-{/*<div class="whatsapp-fab" role="button" tabindex="0" aria-label="¿Tienes alguna pregunta? Contactar por WhatsApp">
-									<div class="joinchat__tooltip" aria-hidden="true"><div>¿Tienes alguna pregunta?</div></div> rel="noopener noreferrer"
-			</div>*/}
-{/* WhatsApp flotante */}
-
+const WhatsAppButton = () => {
+  return (
+    <div>
+      <div>
 <a
 className="whatsapp-fab"
 target="_blank"
@@ -58,10 +19,11 @@ aria-label="Contactar por WhatsApp"
 <path fill="#fff" d="M17.6 14.1c-.3-.15-1.8-.9-2.1-1-.3-.1-.5-.15-.7.15s-.8 1-.98 1.2c-.18.2-.36.22-.66.07-.3-.15-1.26-.46-2.4-1.48-.9-.8-1.5-1.8-1.68-2.1-.18-.3 0-.46.13-.6.12-.12.3-.3.45-.45.15-.15.2-.26.3-.43.1-.18 0-.33-.05-.45-.05-.12-.7-1.7-.95-2.33-.25-.6-.5-.5-.7-.5h-.63c-.18 0-.45.06-.68.33-.23.28-.88.86-.88 2.1s.9 2.44 1.03 2.6c.12.15 1.77 2.7 4.3 3.78 3.03 1.3 3.03 0 3.58-.02.56-.03 1.82-.74 2.08-1.46.25-.72.25-1.34.18-1.46-.06-.12-.27-.18-.57-.33z"/>
 </svg>
 </a> 
-
 </div>
-);
+    </div>
+  )
 }
 
-export default IngArq;
+export default WhatsAppButton
+
 

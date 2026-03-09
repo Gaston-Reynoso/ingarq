@@ -1,0 +1,62 @@
+/* =========================
+   ROOT VARIABLES
+========================= */
+
+ 
+
+  /* Colors 
+  --bg: #0f1a22;
+  --bg-soft: #16232e;
+  --glass: rgba(255,255,255,0.06);
+
+  --primary-1: #c9a24d;
+  --primary-2: #a88332;
+
+  --text-main: #e6eef8;
+  --text-muted: #9aa4b2;
+
+  --success: #2ecc71;
+  --error: #cc3a3a;
+*/
+  /* Layout 
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --container-max: 1100px;
+
+  color-scheme: dark;
+}*/
+
+
+:root {
+  /* Colors */
+  --bg-main: #0f1a22;
+  --bg-soft: #16232e;
+  --bg-glass: rgba(255,255,255,0.06);
+
+  --primary-1: #c9a24d;
+  --primary-2: #a88332;
+
+  --text-main: #e6eef8;
+  --text-muted: #9aa4b2;
+
+  --success: #2ecc71;
+  --error: #cc3a3a;
+
+  /* Layout */
+  --container-max: 1100px;
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  color-scheme: dark;
+
+     /* Typography */
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  
+}

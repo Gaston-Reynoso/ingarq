@@ -1,15 +1,22 @@
 .nav {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    padding: .75rem 0;
-    backdrop-filter: blur(10px);
-    background: rgba(10,15,20,0.55);
-    transition: background .3s ease, box-shadow .3s ease;
+  position: sticky;
+  top: 0;
+  transition:
+    transform 0.35s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+  will-change: trasnform;
+  z-index: 1000;
 }
+
+.nav--hidden {
+  transform: translateY(-100%);
+}
+
+
 .nav-inner{
     display:flex;
-    align-items:center;
+    align-items:center; 
     justify-content:space-between
 }
 
@@ -149,6 +156,7 @@
 /* Contenedor principal para posicionar el menú */
 .dropdown-wrapper {
     position: relative; /* Clave para el posicionamiento del menú */
+    z-index: 1500  ;
 }
 
 /* Estilo para el enlace principal del desplegable (toggle) */
@@ -192,6 +200,7 @@
     border-radius: 14px;
     padding: .6rem;
     min-width: 180px;
+    z-index: 2000;
 }
 
 .dropdown-menu a,

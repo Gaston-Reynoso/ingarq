@@ -1,0 +1,27 @@
+.ui-button {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .6rem 1.1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: transform .2s, filter .2s;
+}
+
+.ui-button.primary {
+  background: linear-gradient(90deg,var(--primary-1),var(--primary-2));
+  color: white;
+}
+
+.ui-button.outline {
+  background: transparent;
+  border: 1px solid var(--primary-1);
+  color: var(--primary-1);
+}
+
+.ui-button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
