@@ -1,30 +1,28 @@
-import sgMail from "@sendgrid/mail";
+import { Resend } from "resend";
 import dotenv from "dotenv";
 
 dotenv.config();
 
-
-sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
-
-
-
+const resend = new Resend(process.env.RESEND_API_KEY!);
 
 export const sendEmail = async (to: string, subject: string, html: string) => {
   try {
+
     console.log("📨 Enviando email a:", to);
 
-    const msg = {
+    const response = await resend.emails.send({
+      from: process.env.FROM_EMAIL!,
       to,
-      from: process.env.FROM_EMAIL!, // MUY importante que esté verificado
       subject,
-      html,
-    };
+      html
+    });
 
-    await sgMail.send(msg);
+    console.log("📩 Email enviado (Resend OK)", response);
 
-    console.log("📩 Email enviado (SendGrid OK)");
   } catch (error: any) {
-    console.error("❌ Error SendGrid:", error.response?.body || error);
-    throw error; // para que el controller lo detecte
+
+    console.error("❌ Error Resend:", error);
+
+    throw error;
   }
 };
