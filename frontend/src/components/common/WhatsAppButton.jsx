@@ -11,8 +11,10 @@ rel="noopener noreferrer"
 href={`https://wa.me/5493512723889?text=${encodeURIComponent('Hola! Quiero más info sobre IngArq')}`}
 role="button"  
 aria-label="Contactar por WhatsApp"
+
 > 
-<span className="tooltip-text">Contactar por WhatsApp</span>
+<span className="tooltip-text"> Contactar por WhatsApp </span>
+
 <svg viewBox="0 0 24 24" width="28" height="28" xmlns="http://www.w3.org/2000/svg" aria-hidden>
 <path fill="#fff" d="M20.52 3.48A11.9 11.9 0 0012 0C5.37 0 .02 4.83.02 11.08c0 1.95.51 3.86 1.48 5.56L0 24l7.61-1.98a11.02 11.02 0 004.39.94c6.63 0 11.98-4.83 11.98-11.08 0-2.96-1.1-5.73-3-7.4z"/>
 <path fill="#25D366" d="M12 2c4.97 0 9 3.92 9 8.75 0 4.19-3.21 7.41-7.9 7.41-.83 0-1.64-.1-2.42-.3L8 19l-1.5-.4A8.83 8.83 0 012.9 10.75C2.9 6.92 7 2 12 2z" opacity="0.0"/>

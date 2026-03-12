@@ -114,7 +114,7 @@ const Navbar = () => {
           </NavLink>
 
           <NavLink to="/sobre" onClick={() => setOpenMenu(false)}>
-            Sobre
+            Nosotros
           </NavLink>
 
          {/* <DropdownItem
