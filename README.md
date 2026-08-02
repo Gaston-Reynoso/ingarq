@@ -16,23 +16,7 @@ Frontend	React + JavaScript + Vite
 Backend	Node.js + Express
 Base de datos	MongoDB + Mongoose
 Variables de entorno	dotenv
-📁 Estructura del proyecto
-ingarq/
-├── frontend/                # Cliente React
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   └── App.jsx
-│   └── package.json
-├── backend/                 # Servidor Node.js
-│   ├── src/
-│   │   ├── controllers/
-│   │   ├── models/
-│   │   ├── routes/
-│   │   └── index.js
-│   └── package.json
-└── README.md
+
 ⚙️ Instalación y uso
 1. Clonar el repositorio
 bash
